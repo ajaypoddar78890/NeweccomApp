@@ -1,6 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "./state/cartReducer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Product = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let email = sessionStorage.getItem("email");
+    if (email === "" || email === null) {
+      navigate("/login");
+    }
+  }, []);
+
+  const handleAddToCart = (product) => {
+    dispatch(addItem(product));
+    toast("item added to the cart!");
+  };
   const products = [
     {
       id: 1,
@@ -231,9 +250,13 @@ const Product = () => {
                 Price: ${product.price}
               </p>
 
-              <button className="rounded-lg text-black bg-yellow-400 w-44 p-2">
-                buy
+              <button
+                className="rounded-lg text-black bg-yellow-400 w-44 p-2"
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to Cart
               </button>
+              <ToastContainer />
             </div>
           ))}
         </div>

@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "ajay.poddar15fea@gmail.com",
+      "password": "ajaypoddar",
+      "country": "USA",
+      "id": 1
+    },
+    {
+      "email": "testing@gmail.com",
+      "password": "testing",
+      "country": "testing",
+      "id": 2
+    },
+    {
+      "email": "aahanasingh196@gmail.com",
+      "password": "aahanasingh",
+      "country": "italy",
+      "id": 3
+    }
+  ]
+}

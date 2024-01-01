@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    let email = sessionStorage.getItem("email");
+    if (email === "" || email === null) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 text-white">
       <div className="container mx-auto p-4">
