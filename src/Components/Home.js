@@ -9,7 +9,7 @@ const Banner = () => {
     if (email === "" || email === null) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 text-white">

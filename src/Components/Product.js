@@ -14,7 +14,7 @@ const Product = () => {
     if (email === "" || email === null) {
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   const handleAddToCart = (product) => {
     dispatch(addItem(product));

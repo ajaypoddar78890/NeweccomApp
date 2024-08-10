@@ -7,25 +7,24 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("");
   const [country, setCountry] = useState("");
 
-  const Navigate = useNavigate();
+  const navigate = useNavigate(); // Updated to camelCase
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(` http://localhost:5000/users`, {
+      const response = await axios.post(`http://localhost:5000/users`, {
         email,
         password,
         country,
       });
 
-      console.log("user has been register ", response.data);
-      Navigate("/loginForm");
-    } catch {
-      console.error("getting some  in registering the user ");
+      console.log("User has been registered: ", response.data);
+      navigate("/loginForm");
+    } catch (error) {
+      // Include error in catch block
+      console.error("Error in registering the user: ", error);
     }
-
-    // console.log("Registering with:", { email, password, country });
   };
 
   return (

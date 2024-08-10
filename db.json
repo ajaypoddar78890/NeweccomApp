@@ -4,19 +4,25 @@
       "email": "ajay.poddar15fea@gmail.com",
       "password": "ajaypoddar",
       "country": "USA",
-      "id": 1
+      "id": "1"
     },
     {
       "email": "testing@gmail.com",
       "password": "testing",
       "country": "testing",
-      "id": 2
+      "id": "2"
     },
     {
       "email": "aahanasingh196@gmail.com",
       "password": "aahanasingh",
       "country": "italy",
-      "id": 3
+      "id": "3"
+    },
+    {
+      "id": "7841",
+      "email": "tester@gmail.com",
+      "password": "tester",
+      "country": "india"
     }
   ]
 }
